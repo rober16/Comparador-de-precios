@@ -1,1 +1,20 @@
-<p>filtro-localidad works!</p>
+<form class="col-md-12">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <select [formControl]="provincia" class="form-select col-6">
+          <option *ngFor="let p of provincias" [ngValue]="p.codProvincia">
+            {{ p.nomProvincia }}
+          </option>
+        </select>
+      </div>
+      <div class="col-sm">
+        <select [formControl]="localidades" class="form-select col-6">
+          <option *ngFor="let p of provincias" [ngValue]="p.codProvincia">
+            {{ p.nomProvincia }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</form>
