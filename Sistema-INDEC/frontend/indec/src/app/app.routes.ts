@@ -5,4 +5,5 @@ import { SucursalesComponent } from './main/pages/sucursales/sucursales/sucursal
 export const routes: Routes = [
   { path: 'inicio', component: HomeComponent },
   { path: 'inicio/sucursales', component: SucursalesComponent },
+  { path: '**', redirectTo: 'inicio' }
 ];
