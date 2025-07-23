@@ -1,0 +1,10 @@
+<form [formGroup]="formulario" class="mt-5 d-flex justify-content-center align-items-center" role="search" (ngSubmit)="enviar()">
+  <input
+    class="form-control me-2 border border-3"
+    type="search"
+    formControlName="producto"
+    placeholder="Buscar Producto"
+    aria-label="Buscar"
+  />
+  <button class="btn btn-primary" type="submit">Buscar</button>
+</form>
