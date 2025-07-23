@@ -2,12 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IProvincias } from '../models/i-provincias';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environment/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SucursalesService {
-  private apiUrl = 'http://localhost:8085/api/v1/indec/provincias';
+  private apiUrl = `${environment.apiUrl}/indec`;
+  
   constructor(private http: HttpClient) {}
 
   private getAuthHeaders(): HttpHeaders {
@@ -25,7 +27,7 @@ export class SucursalesService {
   }
 
   obtenerProvincias(): Observable<IProvincias[]> {
-    return this.http.get<IProvincias[]>(this.apiUrl,{
+    return this.http.get<IProvincias[]>(`${this.apiUrl}/provincias`,{
       headers: this.getAuthHeaders(),
       withCredentials: true
     });
