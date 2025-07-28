@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { IProvincias } from '../models/i-provincias';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environment/environment.development';
+import { ILocalidades } from '../models/i-localidades';
 
 @Injectable({
   providedIn: 'root',
@@ -28,6 +29,13 @@ export class SucursalesService {
 
   obtenerProvincias(): Observable<IProvincias[]> {
     return this.http.get<IProvincias[]>(`${this.apiUrl}/provincias`,{
+      headers: this.getAuthHeaders(),
+      withCredentials: true
+    });
+  }
+
+  obtenerLocalidadesXProvincia(codProvincia: String): Observable<ILocalidades[]>{
+    return this.http.get<ILocalidades[]>(`${this.apiUrl}/localidades/${codProvincia}`,{
       headers: this.getAuthHeaders(),
       withCredentials: true
     });
