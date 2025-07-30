@@ -7,13 +7,13 @@
   </div>
   
   <div class="row">
-    <div class="col-sm mb-2">
-      <div *ngIf="sucursales.length > 0" class="mt-4 sucursales-scroll">
-        <div *ngFor="let sucursal of sucursales" class="card">
+    <div class="col-sm">
+      <div *ngIf="sucursales.length > 0" class="mt-4">
+        <div *ngFor="let sucursal of sucursales" class="card mb-2">
           <div class="card-header">{{ sucursal.nomSucursal}}</div>
           <div class="card-body">
-            <h5 class="card-title">Dirección: {{ sucursal.calle }} {{ sucursal.nroCalle }}</h5>
-            <p class="card-text">Teléfono: {{ sucursal.telefonos }} <br> Horarios de atención: {{ sucursal.horarioSucursal }} <br> Servicios disponibles: {{ sucursal.serviciosDisponibles }}</p>
+            <h5 class="card-title"> Dirección: {{ sucursal.calle }} {{ sucursal.nroCalle }}</h5>
+            <p class="card-text"> Teléfono: {{ sucursal.telefonos }} <br> Horarios de atención: {{ sucursal.horarioSucursal }} <br> Servicios disponibles: {{ sucursal.serviciosDisponibles }}</p>
           </div>
         </div>
       </div>
