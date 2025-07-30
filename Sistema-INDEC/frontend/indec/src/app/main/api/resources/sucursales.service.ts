@@ -4,6 +4,7 @@ import { IProvincias } from '../models/i-provincias';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environment/environment.development';
 import { ILocalidades } from '../models/i-localidades';
+import { ISucursales } from '../models/i-sucursales';
 
 @Injectable({
   providedIn: 'root',
@@ -36,6 +37,13 @@ export class SucursalesService {
 
   obtenerLocalidadesXProvincia(codProvincia: String): Observable<ILocalidades[]>{
     return this.http.get<ILocalidades[]>(`${this.apiUrl}/localidades/${codProvincia}`,{
+      headers: this.getAuthHeaders(),
+      withCredentials: true
+    });
+  }
+
+  obtenerSucursales(nroLocalidad: String): Observable<ISucursales[]>{
+    return this.http.get<ISucursales[]>(`${this.apiUrl}/sucursales/${nroLocalidad}`,{
       headers: this.getAuthHeaders(),
       withCredentials: true
     });
