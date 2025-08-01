@@ -3,11 +3,12 @@ import { FiltroLocalidadComponent } from '../../../../core/components/filtro-loc
 import { ReactiveFormsModule } from '@angular/forms';
 import { ISucursales } from '../../../api/models/i-sucursales';
 import { CommonModule } from '@angular/common';
+import { MapaSucursalesComponent } from '../../../../core/components/mapa-sucursales/mapa-sucursales.component';
 
 @Component({
   selector: 'app-sucursales',
   standalone: true,
-  imports: [FiltroLocalidadComponent, CommonModule],
+  imports: [FiltroLocalidadComponent, CommonModule, MapaSucursalesComponent],
   templateUrl: './sucursales.component.html',
   styleUrl: './sucursales.component.css'
 })
